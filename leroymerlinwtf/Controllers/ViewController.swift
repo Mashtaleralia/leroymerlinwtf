@@ -14,9 +14,13 @@ class ViewController: UIViewController, FavoriteCellDelegate {
     var favoriteItems: [ItemModel] = []
 
     
-    private var items = [ItemModel(itemName: "Гипсокартон влагостойкий", itemPrice: "467руб.", isFavorite: true), ItemModel(itemName: "Штукатурка гипсовая", itemPrice: "491руб.", isFavorite: false), ItemModel(itemName: "Грунтовка глубокого проникновения", itemPrice: "1100руб.", isFavorite: false)]
+    private let items = [ItemModel(itemName: "Гипсокартон влагостойкий 12.5 mm Knauf 2500x1200 mm 3", itemPrice: "467руб.", isFavorite: true), ItemModel(itemName: "Штукатурка гипсовая Knauf Ротбанд 30 кг", itemPrice: "491руб.", isFavorite: false), ItemModel(itemName: "Грунтовка глубокого проникновения Ceresit CT17 10 л", itemPrice: "1100руб.", isFavorite: false), ItemModel(itemName: "Набор садовой мебели складной Fira Celebration сталь/дерево", itemPrice: "4990руб.", isFavorite: false), ItemModel(itemName: "Гамак кресло с бахромой 82х31 хлопок", itemPrice: "1990руб.", isFavorite: false), ItemModel(itemName: "Кресло-гамак садовый 82х131 см, поликоттон/сталь", itemPrice: "4990руб.", isFavorite: false), ItemModel(itemName: "Гамак кресло с бахромой 82х31 хлопок", itemPrice: "1990руб.", isFavorite: false), ItemModel(itemName: "Кресло-гамак садовый 82х131 см, поликоттон/сталь", itemPrice: "4990руб.", isFavorite: false), ItemModel(itemName: "Набор садовой мебели складной Fira Celebration сталь/дерево", itemPrice: "4990руб.", isFavorite: false)]
     
     private var catalogSections = [CatalogModel(categoryName: "Каталог", image: UIImage(named: "catalog-pic")!), CatalogModel(categoryName: "Инструменты", image: UIImage(named: "catalog-pic")!), CatalogModel(categoryName: "Краски", image: UIImage(named: "catalog-pic")!), CatalogModel(categoryName: "Сад", image: UIImage(named: "catalog-pic")!), CatalogModel(categoryName: "Декор", image: UIImage(named: "catalog-pic")!), CatalogModel(categoryName: "Напольные покрытия", image: UIImage(named: "catalog-pic")!)]
+    
+    var filteredData = [ItemModel]()
+    
+    var isSearching: Bool = false
     
     private var collectionView: UICollectionView?
     
@@ -64,6 +68,9 @@ class ViewController: UIViewController, FavoriteCellDelegate {
         guard let collectionView = collectionView else {
             return
         }
+        tableView.estimatedRowHeight = view.frame.height / 5
+        tableView.rowHeight = UITableView.automaticDimension
+    
         
         // Do any additional setup after loading the view.
     }
@@ -106,25 +113,35 @@ class ViewController: UIViewController, FavoriteCellDelegate {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        if isSearching {
+            return 2
+        }
         return 4
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 1 {
-            return "Рекомендуем"
-        } else if section == 2 {
-            return "Товары для уборки"
-        } else if section == 3 {
-            return "Садовая мебель"
+        if !isSearching {
+            if section == 1 {
+                return "Рекомендуем"
+            } else if section == 2 {
+                return "Товары для уборки"
+            } else if section == 3 {
+                return "Садовая мебель"
+            }
         }
+      
         return nil
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isSearching {
+            return filteredData.count
+        }
         if section == 0 {
             return 1
         }
-        return items.count
+        return 3
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      
         if indexPath.section == 0 && indexPath.row == 0 {
             if let collectionView = collectionView {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -133,7 +150,26 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: RecommendedTableViewCell.identifier, for: indexPath) as! RecommendedTableViewCell
-        cell.model = items[indexPath.row]
+        if isSearching {
+            
+           
+            cell.model = filteredData[indexPath.row]
+        } else {
+          
+            if indexPath.section == 1 {
+                cell.model = items[indexPath.row + indexPath.section - 1]
+            } else {
+                cell.model = items[indexPath.row + indexPath.section + 1]
+            }
+      
+            
+          
+        
+            
+        }
+      
+        
+        
         cell.delegate = self
        
         cell.configure(image: UIImage(named: "default")!)
@@ -145,8 +181,27 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = ItemDescriptionViewController(model: items[indexPath.row])
-        navigationController?.pushViewController(vc, animated: true)
+        var model: ItemModel
+        if isSearching {
+            
+           
+            model = filteredData[indexPath.row]
+        } else {
+          
+            if indexPath.section == 1 {
+                model = items[indexPath.row + indexPath.section - 1]
+            } else {
+                model = items[indexPath.row + indexPath.section + 1]
+            }
+   
+        }
+        
+        
+        let vc = ItemDescriptionViewController(model: model)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+         
+       
     }
 }
 
@@ -163,9 +218,36 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         cell.configure(with: catalogSections[indexPath.row])
         return cell
     }
+    /*
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        <#code#>
+    }
+     */
 }
 
 
 extension ViewController: UISearchBarDelegate {
-    
+    func searchBar(_ searchBar: UISearchBar, textDidChange text: String) {
+        isSearching = true
+        self.filteredData.removeAll()
+        guard text != "" || text != " " else {
+            print("empty search")
+            return
+        }
+        for item in items {
+            let searchText = text.lowercased()
+            let isArrayContain = item.itemName.lowercased().range(of: searchText)
+            if isArrayContain != nil {
+                filteredData.append(item)
+            }
+        }
+        print(filteredData)
+        if searchBar.text == "" {
+            isSearching = false
+            tableView.reloadData()
+        } else {
+            isSearching = true
+            tableView.reloadData()
+        }
+    }
 }

@@ -10,12 +10,7 @@ import UIKit
 
 
 class MyListViewController: UIViewController {
-    
-   
-    
-        
-    
-    
+
     public var favoriteItems: [ItemModel] = []
     
    
@@ -46,7 +41,9 @@ class MyListViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
+        let vc = EmptyListViewController()
+        vc.modalPresentationStyle = .currentContext
+        present(vc, animated: true, completion: nil)
         //print(favoriteItems)
         /*
             if favoriteItems.isEmpty {

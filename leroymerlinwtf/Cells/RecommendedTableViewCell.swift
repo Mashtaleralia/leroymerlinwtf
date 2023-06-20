@@ -38,6 +38,8 @@ class RecommendedTableViewCell: UITableViewCell {
         label.textColor = .black
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
+        label.autoresizingMask = .flexibleHeight
+        //label.sizeToFit()
         return label
     }()
     
@@ -81,12 +83,16 @@ class RecommendedTableViewCell: UITableViewCell {
         contentView.addSubview(button)
         contentView.addSubview(addFavoriteButton)
         addFavoriteButton.addTarget(self, action: #selector(didTapAddFavoriteButton), for: .touchUpInside)
-        
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         selectionStyle = .none
         addFavoriteButton.tintColor = .systemGreen
         
         
     }
+    
+    @objc func didTapButton() {
+        
+            }
     
     @objc func didTapAddFavoriteButton() {
         
@@ -117,9 +123,11 @@ class RecommendedTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        let size = itemLabel.sizeThatFits(self.frame.size)
         itemLabel.frame = CGRect(x: contentView.frame.height - 20, y: 0, width: contentView.frame.width / 1.5 , height: contentView.frame.height/4)
+        
         priceLabel.frame = CGRect(x: contentView.frame.height - 20, y: 40, width: contentView.frame.width / 1.5, height: contentView.frame.height/4)
-        button.frame = CGRect(x: contentView.frame.height - 20, y: contentView.frame.height - 65, width: 100, height: 50)
+        button.frame = CGRect(x: contentView.frame.height - 20, y: priceLabel.frame.maxY + contentView.frame.height / 10 , width: 100, height: contentView.frame.height/4)
         itemImage.frame = CGRect(x: 10, y: 10, width: contentView.frame.height - 40, height: contentView.frame.height - 40)
         addFavoriteButton.frame = CGRect(x: contentView.frame.width - 30, y: contentView.frame.height - 35 , width: 30, height: 30)
         
