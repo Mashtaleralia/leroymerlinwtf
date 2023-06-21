@@ -13,14 +13,19 @@ class UserDefaultsManager {
     let defaults = UserDefaults()
 }
 
-struct ItemModel {
-    var itemName: String
-    var itemPrice: String
-    var isFavorite: Bool
+enum ItemState {
+    case inCart
+    case notInCart
 }
+
+
 protocol FavoriteCellDelegate: UIViewController {
     func didAddToFavorite(cell: RecommendedTableViewCell)
     
+}
+
+protocol DidTapAddToCartDelegate {
+    func addToCart(_ item: ItemModel)
 }
 
 
@@ -29,7 +34,7 @@ class RecommendedTableViewCell: UITableViewCell {
    
     public var model: ItemModel?
     
-    var delegate: FavoriteCellDelegate?
+   // var delegate: FavoriteCellDelegate?
      
     static let identifier = "recommendedCell"
     private var buttonFlag: Bool = false
@@ -43,7 +48,7 @@ class RecommendedTableViewCell: UITableViewCell {
         return label
     }()
     
-   
+    var delegate: DidTapAddToCartDelegate?
     
     private let addFavoriteButton: UIButton = {
         let button = UIButton(type: .custom)
@@ -91,14 +96,14 @@ class RecommendedTableViewCell: UITableViewCell {
     }
     
     @objc func didTapButton() {
-        
-            }
+        delegate?.addToCart(model!)
+    }
     
     @objc func didTapAddFavoriteButton() {
         
         
       
-        delegate?.didAddToFavorite(cell: self)
+       // delegate?.didAddToFavorite(cell: self)
         
         if let fav = self.model?.isFavorite {
             UserDefaultsManager.shared.defaults.set(model!.itemName, forKey: "favorite name")

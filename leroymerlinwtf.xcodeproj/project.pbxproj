@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		844C572029FC4A76001A3B09 /* ItemDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C571F29FC4A76001A3B09 /* ItemDescriptionViewController.swift */; };
+		8492EC8B2A41C34900DF7E07 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492EC8A2A41C34900DF7E07 /* Model.swift */; };
 		84C95FD729F0432300BF7856 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C95FD629F0432300BF7856 /* AppDelegate.swift */; };
 		84C95FD929F0432300BF7856 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C95FD829F0432300BF7856 /* SceneDelegate.swift */; };
 		84C95FDB29F0432300BF7856 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C95FDA29F0432300BF7856 /* ViewController.swift */; };
@@ -18,10 +19,12 @@
 		84C95FED29F1327900BF7856 /* CatalogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C95FEC29F1327900BF7856 /* CatalogCollectionViewCell.swift */; };
 		84C95FEF29F1809C00BF7856 /* EmptyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C95FEE29F1809C00BF7856 /* EmptyListViewController.swift */; };
 		84C95FF129F190A300BF7856 /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C95FF029F190A300BF7856 /* MyListViewController.swift */; };
+		84E20C872A22999B00C7EF85 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E20C862A22999B00C7EF85 /* MyProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		844C571F29FC4A76001A3B09 /* ItemDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDescriptionViewController.swift; sourceTree = "<group>"; };
+		8492EC8A2A41C34900DF7E07 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		84C95FD329F0432300BF7856 /* leroymerlinwtf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = leroymerlinwtf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C95FD629F0432300BF7856 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84C95FD829F0432300BF7856 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		84C95FEC29F1327900BF7856 /* CatalogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCollectionViewCell.swift; sourceTree = "<group>"; };
 		84C95FEE29F1809C00BF7856 /* EmptyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListViewController.swift; sourceTree = "<group>"; };
 		84C95FF029F190A300BF7856 /* MyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
+		84E20C862A22999B00C7EF85 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8492EC872A41C2A700DF7E07 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84C95FF029F190A300BF7856 /* MyListViewController.swift */,
+				84C95FEE29F1809C00BF7856 /* EmptyListViewController.swift */,
+				844C571F29FC4A76001A3B09 /* ItemDescriptionViewController.swift */,
+				84C95FDA29F0432300BF7856 /* ViewController.swift */,
+				84E20C862A22999B00C7EF85 /* MyProfileViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8492EC882A41C2F800DF7E07 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84C95FEC29F1327900BF7856 /* CatalogCollectionViewCell.swift */,
+				84C95FEA29F0442F00BF7856 /* RecommendedTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8492EC892A41C32700DF7E07 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8492EC8A2A41C34900DF7E07 /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8492EC8C2A41C37200DF7E07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				84C95FDF29F0433000BF7856 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		84C95FCA29F0432200BF7856 = {
 			isa = PBXGroup;
 			children = (
@@ -66,18 +107,15 @@
 		84C95FD529F0432300BF7856 /* leroymerlinwtf */ = {
 			isa = PBXGroup;
 			children = (
+				8492EC8C2A41C37200DF7E07 /* Resources */,
+				8492EC892A41C32700DF7E07 /* Models */,
+				8492EC882A41C2F800DF7E07 /* Cells */,
+				8492EC872A41C2A700DF7E07 /* Controllers */,
 				84C95FD629F0432300BF7856 /* AppDelegate.swift */,
 				84C95FD829F0432300BF7856 /* SceneDelegate.swift */,
-				84C95FDA29F0432300BF7856 /* ViewController.swift */,
-				844C571F29FC4A76001A3B09 /* ItemDescriptionViewController.swift */,
 				84C95FDC29F0432300BF7856 /* Main.storyboard */,
-				84C95FDF29F0433000BF7856 /* Assets.xcassets */,
 				84C95FE129F0433000BF7856 /* LaunchScreen.storyboard */,
-				84C95FEE29F1809C00BF7856 /* EmptyListViewController.swift */,
-				84C95FEC29F1327900BF7856 /* CatalogCollectionViewCell.swift */,
-				84C95FF029F190A300BF7856 /* MyListViewController.swift */,
 				84C95FE429F0433000BF7856 /* Info.plist */,
-				84C95FEA29F0442F00BF7856 /* RecommendedTableViewCell.swift */,
 			);
 			path = leroymerlinwtf;
 			sourceTree = "<group>";
@@ -156,7 +194,9 @@
 				844C572029FC4A76001A3B09 /* ItemDescriptionViewController.swift in Sources */,
 				84C95FDB29F0432300BF7856 /* ViewController.swift in Sources */,
 				84C95FD729F0432300BF7856 /* AppDelegate.swift in Sources */,
+				84E20C872A22999B00C7EF85 /* MyProfileViewController.swift in Sources */,
 				84C95FF129F190A300BF7856 /* MyListViewController.swift in Sources */,
+				8492EC8B2A41C34900DF7E07 /* Model.swift in Sources */,
 				84C95FEF29F1809C00BF7856 /* EmptyListViewController.swift in Sources */,
 				84C95FED29F1327900BF7856 /* CatalogCollectionViewCell.swift in Sources */,
 				84C95FD929F0432300BF7856 /* SceneDelegate.swift in Sources */,

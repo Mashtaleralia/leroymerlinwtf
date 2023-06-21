@@ -94,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="-1279" y="1496"/>
         </scene>
-        <!--View Controller-->
+        <!--My Profile View Controller-->
         <scene sceneID="Km7-5D-suo">
             <objects>
-                <viewController id="Vvq-c0-B0O" sceneMemberID="viewController">
+                <viewController id="Vvq-c0-B0O" customClass="MyProfileViewController" customModule="leroymerlinwtf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gyz-Eb-Nw7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

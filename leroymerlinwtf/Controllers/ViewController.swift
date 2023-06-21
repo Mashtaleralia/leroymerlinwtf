@@ -9,12 +9,12 @@ import UIKit
 
 
 
-class ViewController: UIViewController, FavoriteCellDelegate {
+class ViewController: UIViewController {
     
     var favoriteItems: [ItemModel] = []
 
     
-    private let items = [ItemModel(itemName: "Гипсокартон влагостойкий 12.5 mm Knauf 2500x1200 mm 3", itemPrice: "467руб.", isFavorite: true), ItemModel(itemName: "Штукатурка гипсовая Knauf Ротбанд 30 кг", itemPrice: "491руб.", isFavorite: false), ItemModel(itemName: "Грунтовка глубокого проникновения Ceresit CT17 10 л", itemPrice: "1100руб.", isFavorite: false), ItemModel(itemName: "Набор садовой мебели складной Fira Celebration сталь/дерево", itemPrice: "4990руб.", isFavorite: false), ItemModel(itemName: "Гамак кресло с бахромой 82х31 хлопок", itemPrice: "1990руб.", isFavorite: false), ItemModel(itemName: "Кресло-гамак садовый 82х131 см, поликоттон/сталь", itemPrice: "4990руб.", isFavorite: false), ItemModel(itemName: "Гамак кресло с бахромой 82х31 хлопок", itemPrice: "1990руб.", isFavorite: false), ItemModel(itemName: "Кресло-гамак садовый 82х131 см, поликоттон/сталь", itemPrice: "4990руб.", isFavorite: false), ItemModel(itemName: "Набор садовой мебели складной Fira Celebration сталь/дерево", itemPrice: "4990руб.", isFavorite: false)]
+    private let items = [ItemModel(itemName: "Гипсокартон влагостойкий 12.5 mm Knauf 2500x1200 mm 3", itemPrice: "467руб.", isFavorite: true, state: .notInCart), ItemModel(itemName: "Штукатурка гипсовая Knauf Ротбанд 30 кг", itemPrice: "491руб.", isFavorite: false, state: .notInCart), ItemModel(itemName: "Грунтовка глубокого проникновения Ceresit CT17 10 л", itemPrice: "1100руб.", isFavorite: false, state: .notInCart), ItemModel(itemName: "Набор садовой мебели складной Fira Celebration сталь/дерево", itemPrice: "4990руб.", isFavorite: false, state: .notInCart), ItemModel(itemName: "Гамак кресло с бахромой 82х31 хлопок", itemPrice: "1990руб.", isFavorite: false, state: .notInCart), ItemModel(itemName: "Кресло-гамак садовый 82х131 см, поликоттон/сталь", itemPrice: "4990руб.", isFavorite: false, state: .notInCart), ItemModel(itemName: "Гамак кресло с бахромой 82х31 хлопок", itemPrice: "1990руб.", isFavorite: false, state: .notInCart), ItemModel(itemName: "Кресло-гамак садовый 82х131 см, поликоттон/сталь", itemPrice: "4990руб.", isFavorite: false, state: .notInCart), ItemModel(itemName: "Набор садовой мебели складной Fira Celebration сталь/дерево", itemPrice: "4990руб.", isFavorite: false, state: .notInCart)]
     
     private var catalogSections = [CatalogModel(categoryName: "Каталог", image: UIImage(named: "catalog-pic")!), CatalogModel(categoryName: "Инструменты", image: UIImage(named: "catalog-pic")!), CatalogModel(categoryName: "Краски", image: UIImage(named: "catalog-pic")!), CatalogModel(categoryName: "Сад", image: UIImage(named: "catalog-pic")!), CatalogModel(categoryName: "Декор", image: UIImage(named: "catalog-pic")!), CatalogModel(categoryName: "Напольные покрытия", image: UIImage(named: "catalog-pic")!)]
     
@@ -23,7 +23,7 @@ class ViewController: UIViewController, FavoriteCellDelegate {
     var isSearching: Bool = false
     
     private var collectionView: UICollectionView?
-    
+  /*
     func didAddToFavorite(cell: RecommendedTableViewCell) {
         
         let indexPath = tableView.indexPath(for: cell)
@@ -37,6 +37,7 @@ class ViewController: UIViewController, FavoriteCellDelegate {
         //print(indexPath!.row)
         //print(favoriteItems)
     }
+   */
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -170,7 +171,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
       
         
         
-        cell.delegate = self
+        //cell.delegate = self
        
         cell.configure(image: UIImage(named: "default")!)
         
@@ -251,3 +252,30 @@ extension ViewController: UISearchBarDelegate {
         }
     }
 }
+/*
+
+extension ViewController: DidTapAddToCartDelegate {
+    
+    
+    func updateUI(_ item: ItemModel) {
+        switch item.state {
+        case .inCart:
+            
+        case .notInCart:
+            
+        }
+    }
+    
+    func addToCart(_ item: ItemModel) {
+        switch item.state {
+        case .inCart:
+            item.state = .notInCart
+            return
+        
+        case .notInCart:
+            item.state = .inCart
+            return
+        }
+    }
+}
+*/

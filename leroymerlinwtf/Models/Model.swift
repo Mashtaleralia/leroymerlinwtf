@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct ItemModel {
+    var itemName: String
+    var itemPrice: String
+    var isFavorite: Bool
+    var state: ItemState
+}
