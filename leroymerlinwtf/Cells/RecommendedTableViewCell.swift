@@ -25,7 +25,7 @@ protocol FavoriteCellDelegate: UIViewController {
 }
 
 protocol DidTapAddToCartDelegate {
-    func addToCart(_ item: ItemModel)
+    func addToCart(_ item: inout ItemModel)
 }
 
 
@@ -95,8 +95,24 @@ class RecommendedTableViewCell: UITableViewCell {
         
     }
     
+    
     @objc func didTapButton() {
-        delegate?.addToCart(model!)
+        delegate?.addToCart(&model!)
+        updateUI(model!)
+    }
+    
+    func updateUI(_ item: ItemModel) {
+        //button.setTitle("Добавлено", for: .normal)
+        
+        switch item.state {
+            case .inCart:
+                button.setTitle("Добавлено", for: .normal)
+                
+            case .notInCart:
+                button.setTitle("В корзину", for: .normal)
+                
+        }
+         
     }
     
     @objc func didTapAddFavoriteButton() {
@@ -141,6 +157,7 @@ class RecommendedTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         model?.isFavorite = false
+        model?.state = .notInCart
     }
 
 }

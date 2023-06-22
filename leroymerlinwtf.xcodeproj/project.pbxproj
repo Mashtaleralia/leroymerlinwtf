@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C8B5F56D935BE80BC421C75 /* Pods_leroymerlinwtf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9183985971138179661BFD94 /* Pods_leroymerlinwtf.framework */; };
 		844C572029FC4A76001A3B09 /* ItemDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C571F29FC4A76001A3B09 /* ItemDescriptionViewController.swift */; };
 		8492EC8B2A41C34900DF7E07 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492EC8A2A41C34900DF7E07 /* Model.swift */; };
+		8492EC8E2A430AFA00DF7E07 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492EC8D2A430AFA00DF7E07 /* CartViewController.swift */; };
+		8492EC902A444FB500DF7E07 /* SelectRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492EC8F2A444FB500DF7E07 /* SelectRegionViewController.swift */; };
 		84C95FD729F0432300BF7856 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C95FD629F0432300BF7856 /* AppDelegate.swift */; };
 		84C95FD929F0432300BF7856 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C95FD829F0432300BF7856 /* SceneDelegate.swift */; };
 		84C95FDB29F0432300BF7856 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C95FDA29F0432300BF7856 /* ViewController.swift */; };
@@ -23,8 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5AADBEEF0FE1D8F6F5758208 /* Pods-leroymerlinwtf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-leroymerlinwtf.release.xcconfig"; path = "Target Support Files/Pods-leroymerlinwtf/Pods-leroymerlinwtf.release.xcconfig"; sourceTree = "<group>"; };
 		844C571F29FC4A76001A3B09 /* ItemDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDescriptionViewController.swift; sourceTree = "<group>"; };
 		8492EC8A2A41C34900DF7E07 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		8492EC8D2A430AFA00DF7E07 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		8492EC8F2A444FB500DF7E07 /* SelectRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRegionViewController.swift; sourceTree = "<group>"; };
 		84C95FD329F0432300BF7856 /* leroymerlinwtf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = leroymerlinwtf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C95FD629F0432300BF7856 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84C95FD829F0432300BF7856 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +44,8 @@
 		84C95FEE29F1809C00BF7856 /* EmptyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListViewController.swift; sourceTree = "<group>"; };
 		84C95FF029F190A300BF7856 /* MyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
 		84E20C862A22999B00C7EF85 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		9183985971138179661BFD94 /* Pods_leroymerlinwtf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_leroymerlinwtf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B66206A456B84C69CA155ACC /* Pods-leroymerlinwtf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-leroymerlinwtf.debug.xcconfig"; path = "Target Support Files/Pods-leroymerlinwtf/Pods-leroymerlinwtf.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,12 +53,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C8B5F56D935BE80BC421C75 /* Pods_leroymerlinwtf.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F825C281065FA809E3165FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9183985971138179661BFD94 /* Pods_leroymerlinwtf.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8492EC872A41C2A700DF7E07 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +76,8 @@
 				844C571F29FC4A76001A3B09 /* ItemDescriptionViewController.swift */,
 				84C95FDA29F0432300BF7856 /* ViewController.swift */,
 				84E20C862A22999B00C7EF85 /* MyProfileViewController.swift */,
+				8492EC8D2A430AFA00DF7E07 /* CartViewController.swift */,
+				8492EC8F2A444FB500DF7E07 /* SelectRegionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -93,6 +112,8 @@
 			children = (
 				84C95FD529F0432300BF7856 /* leroymerlinwtf */,
 				84C95FD429F0432300BF7856 /* Products */,
+				F9C9501900E364E7DCCD93EC /* Pods */,
+				0F825C281065FA809E3165FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +141,15 @@
 			path = leroymerlinwtf;
 			sourceTree = "<group>";
 		};
+		F9C9501900E364E7DCCD93EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B66206A456B84C69CA155ACC /* Pods-leroymerlinwtf.debug.xcconfig */,
+				5AADBEEF0FE1D8F6F5758208 /* Pods-leroymerlinwtf.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -127,9 +157,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84C95FE729F0433000BF7856 /* Build configuration list for PBXNativeTarget "leroymerlinwtf" */;
 			buildPhases = (
+				5CEB6DCEBC50634F192FB3F0 /* [CP] Check Pods Manifest.lock */,
 				84C95FCF29F0432300BF7856 /* Sources */,
 				84C95FD029F0432300BF7856 /* Frameworks */,
 				84C95FD129F0432300BF7856 /* Resources */,
+				1A33D8B85AE040939EF5E09E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,11 +218,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1A33D8B85AE040939EF5E09E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-leroymerlinwtf/Pods-leroymerlinwtf-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-leroymerlinwtf/Pods-leroymerlinwtf-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-leroymerlinwtf/Pods-leroymerlinwtf-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CEB6DCEBC50634F192FB3F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-leroymerlinwtf-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		84C95FCF29F0432300BF7856 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8492EC902A444FB500DF7E07 /* SelectRegionViewController.swift in Sources */,
 				844C572029FC4A76001A3B09 /* ItemDescriptionViewController.swift in Sources */,
 				84C95FDB29F0432300BF7856 /* ViewController.swift in Sources */,
 				84C95FD729F0432300BF7856 /* AppDelegate.swift in Sources */,
@@ -198,6 +273,7 @@
 				84C95FF129F190A300BF7856 /* MyListViewController.swift in Sources */,
 				8492EC8B2A41C34900DF7E07 /* Model.swift in Sources */,
 				84C95FEF29F1809C00BF7856 /* EmptyListViewController.swift in Sources */,
+				8492EC8E2A430AFA00DF7E07 /* CartViewController.swift in Sources */,
 				84C95FED29F1327900BF7856 /* CatalogCollectionViewCell.swift in Sources */,
 				84C95FD929F0432300BF7856 /* SceneDelegate.swift in Sources */,
 				84C95FEB29F0442F00BF7856 /* RecommendedTableViewCell.swift in Sources */,
@@ -344,6 +420,7 @@
 		};
 		84C95FE829F0433000BF7856 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B66206A456B84C69CA155ACC /* Pods-leroymerlinwtf.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -371,6 +448,7 @@
 		};
 		84C95FE929F0433000BF7856 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AADBEEF0FE1D8F6F5758208 /* Pods-leroymerlinwtf.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

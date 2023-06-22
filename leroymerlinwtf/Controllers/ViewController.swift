@@ -171,7 +171,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
       
         
         
-        //cell.delegate = self
+        cell.delegate = self
        
         cell.configure(image: UIImage(named: "default")!)
         
@@ -252,30 +252,25 @@ extension ViewController: UISearchBarDelegate {
         }
     }
 }
-/*
+
 
 extension ViewController: DidTapAddToCartDelegate {
     
     
-    func updateUI(_ item: ItemModel) {
-        switch item.state {
-        case .inCart:
-            
-        case .notInCart:
-            
-        }
-    }
     
-    func addToCart(_ item: ItemModel) {
+    
+    
+    func addToCart(_ item: inout ItemModel) {
+        print("cum")
         switch item.state {
         case .inCart:
             item.state = .notInCart
-            return
+            
         
         case .notInCart:
             item.state = .inCart
-            return
+            
         }
     }
 }
-*/
+

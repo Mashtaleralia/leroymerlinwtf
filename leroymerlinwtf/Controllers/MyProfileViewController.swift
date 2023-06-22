@@ -149,6 +149,10 @@ extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.textLabel?.text = data[indexPath.section - 1][indexPath.row].title
             cell.accessoryType = .disclosureIndicator
+         //   if indexPath.section == 1 && indexPath.row == 1 {
+            cell.detailTextLabel?.text = "Москва и область"
+          //  }
+            
         }
         
         
@@ -186,7 +190,7 @@ extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 && indexPath.row == 0 {
             return headerView.frame.height
         }
-        return 55
+        return 60
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
