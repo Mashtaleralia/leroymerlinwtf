@@ -12,6 +12,7 @@
 		8492EC8B2A41C34900DF7E07 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492EC8A2A41C34900DF7E07 /* Model.swift */; };
 		8492EC8E2A430AFA00DF7E07 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492EC8D2A430AFA00DF7E07 /* CartViewController.swift */; };
 		8492EC902A444FB500DF7E07 /* SelectRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492EC8F2A444FB500DF7E07 /* SelectRegionViewController.swift */; };
+		8492EC922A4467C500DF7E07 /* SelectRegionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492EC912A4467C500DF7E07 /* SelectRegionTableViewCell.swift */; };
 		84C95FD729F0432300BF7856 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C95FD629F0432300BF7856 /* AppDelegate.swift */; };
 		84C95FD929F0432300BF7856 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C95FD829F0432300BF7856 /* SceneDelegate.swift */; };
 		84C95FDB29F0432300BF7856 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C95FDA29F0432300BF7856 /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 		8492EC8A2A41C34900DF7E07 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8492EC8D2A430AFA00DF7E07 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		8492EC8F2A444FB500DF7E07 /* SelectRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRegionViewController.swift; sourceTree = "<group>"; };
+		8492EC912A4467C500DF7E07 /* SelectRegionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRegionTableViewCell.swift; sourceTree = "<group>"; };
 		84C95FD329F0432300BF7856 /* leroymerlinwtf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = leroymerlinwtf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C95FD629F0432300BF7856 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84C95FD829F0432300BF7856 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			children = (
 				84C95FEC29F1327900BF7856 /* CatalogCollectionViewCell.swift */,
 				84C95FEA29F0442F00BF7856 /* RecommendedTableViewCell.swift */,
+				8492EC912A4467C500DF7E07 /* SelectRegionTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				8492EC8E2A430AFA00DF7E07 /* CartViewController.swift in Sources */,
 				84C95FED29F1327900BF7856 /* CatalogCollectionViewCell.swift in Sources */,
 				84C95FD929F0432300BF7856 /* SceneDelegate.swift in Sources */,
+				8492EC922A4467C500DF7E07 /* SelectRegionTableViewCell.swift in Sources */,
 				84C95FEB29F0442F00BF7856 /* RecommendedTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
